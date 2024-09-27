@@ -3,7 +3,7 @@ Webová verze hry Člověče nezlob se, pravidla dostupná [tu](https://www.spol
 
 ## Dokumentace
 Use Case diagram:
-### Obrázky
+### Obrázky:
 #### Radim
 ![Obrázek-Radim](navrhy/navrh-Radim.png)
 #### Lukáš
