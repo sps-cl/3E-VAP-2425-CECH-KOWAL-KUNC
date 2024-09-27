@@ -2,7 +2,7 @@
 Webová verze hry Člověče nezlob se, pravidla dostupná [tu](https://www.spolecenske-stolni-hry.cz/navody-ke-spolecenskym-hram/clovece-nezlob-se.php)
 
 ## Dokumentace
-Use Case diagram: ![usecase](usecase.svg)
+Use Case diagram: ![usecase](usecase.png)
 ### Obrázky:
 #### Radim
 ![Obrázek-Radim](navrhy/navrh-Radim.png)
