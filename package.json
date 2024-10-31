@@ -1,0 +1,15 @@
+{
+  "name": "radim",
+  "version": "1.0.0",
+  "description": "<<popis>>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "<<cech_kowal_kunc>>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1",
+    "socket.io": "^4.8.1"
+  }
+}
