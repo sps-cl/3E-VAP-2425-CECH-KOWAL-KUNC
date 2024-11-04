@@ -1,0 +1,202 @@
+.pole {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+body {
+  background-color: rgb(143, 143, 143);
+}
+
+.non {
+  display: none;
+}
+
+.spawn-red {
+  background-color: red;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.spawn-blue {
+  background-color: blue;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.spawn-green {
+  background-color: green;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+.spawn-yellow {
+  background-color: yellow;
+  border: 2px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.kostka:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.domecek-zelena {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: green;
+  border: 2px solid black;
+}
+
+.domecek-cervena {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: red;
+  border: 2px solid black;
+}
+
+.domecek-zluta {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: yellow;
+  border: 2px solid black;
+}
+
+.domecek-modra {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: blue;
+  border: 2px solid black;
+}
+
+.dice {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 800px;
+  bottom: 420px;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+
+@keyframes rolling {
+  50% {
+    transform: rotateX(455deg) rotateY(455deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #f6f3f0;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #dddbd8, #fff);
+}
+
+.face::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #f6f3f0;
+  transform: translateZ(-1px);
+}
+
+.face::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #131210;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+
+.back {
+  transform: rotateX(180deg) translateZ(50px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.front::after {
+  width: 30px;
+  height: 30px;
+  background: #f63330;
+  margin: -15px 0 0 -15px;
+}
+
+.back::after {
+  margin: -35px 0 0 -30px;
+  box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
+}
+
+.top::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px;
+}
+
+.bottom::after {
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
+}
+
+.right::after {
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0, 0 40px, 40px 40px;
+}
+
+.left::after {
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px, 50px 50px;
+}
+
+/*
+  Roll Button styles
+*/
+
+.roll {
+  cursor: pointer;
+  color: #b33951;
+  font: 700 14px "Montserrat";
+  transition: 0.4s;
+  background-color: pink;
+  border: 2px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+.roll:hover {
+  color: #fff;
+  background: #b33951;
+}

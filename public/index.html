@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Člověče nezlob se</title>
-    <link rel="stylesheet" href="css\styles.css">
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="cely-pole">
@@ -81,7 +80,7 @@
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
-                <td><button class="kostka" id="kostkav" onclick="hodKostkou()">Click</button></td>
+                <td><button class="roll" id="kostkav">Roll</button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
@@ -155,20 +154,18 @@
             </tr>
         </table>
     </div>
+        <div class="container">
+            <div class="dice">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+        </div>
+    </div>
+    
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        const socket = io();
-
-        function hodKostkou() {
-            const hod = Math.floor(Math.random() * 6) + 1;
-            document.getElementById("kostkav").textContent = hod
-            document.getElementById("kostkav").style.fontSize = "26px"; 
-            socket.emit('hodKostkou', hod); // Pošle výsledek hodu na server
-        }
-
-        socket.on('hodKostkou', (data) => {
-            console.log("Výsledek hodu: " + data);
-        });
-  </script>
+    <script src="index.js" defer></script>
 </body>
 </html>
