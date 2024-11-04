@@ -81,7 +81,7 @@
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
-                <td><button class="kostka" onclick="hodKostkou()"></button></td>
+                <td><button class="kostka" id="kostkav" onclick="hodKostkou()">Click</button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
@@ -138,7 +138,7 @@
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="spawn-yellow"id="yf1"></button></td>
-                <td><button class="spawn-yellow"id="yf2"></button></td>
+                <td><button class="spawn-yellow"id="yf"></button></td>
             </tr>
             <tr>
                 <td><button class="spawn-blue"id="bf3"></button></td>
@@ -160,7 +160,9 @@
         const socket = io();
 
         function hodKostkou() {
-            const hod = Math.floor(Math.random() * 6) + 1;;
+            const hod = Math.floor(Math.random() * 6) + 1;
+            document.getElementById("kostkav").textContent = hod
+            document.getElementById("kostkav").style.fontSize = "26px"; 
             socket.emit('hodKostkou', hod); // Pošle výsledek hodu na server
         }
 
