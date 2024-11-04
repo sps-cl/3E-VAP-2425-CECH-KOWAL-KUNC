@@ -6,11 +6,8 @@ const rollBtn = document.querySelector(".roll");
 const randomDice = () => {
   const random = Math.floor(Math.random() * 6) + 1;
 
-  if (random >= 1 && random <= 6) {
-    rollDice(random);
-  } else {
-    randomDice();
-  }
+  rollDice(random);
+
   socket.emit("hodKostkou", random); // Pošle výsledek hodu na server
   socket.on("hodKostkou", (data) => {
     console.log("Výsledek hodu: " + data);

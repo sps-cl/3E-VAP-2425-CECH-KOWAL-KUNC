@@ -1,3 +1,9 @@
+.Board{
+  margin-left: 32vw;
+  width: 50%;
+  margin-top: 2vw;
+}
+
 .pole {
   width: 50px;
   height: 50px;
@@ -80,10 +86,10 @@ body {
 
 .dice {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 800px;
-  top: 260px;
+  width: 5vw;
+  height: 5vw;
+  left: 70vw; 
+  top: 15vw;
   transform-style: preserve-3d;
   transition: 1s ease;
 }
