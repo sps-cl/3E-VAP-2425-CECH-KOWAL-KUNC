@@ -81,7 +81,7 @@
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
                 <td><button class="domecek-cervena"></button></td>
-                <td><button class="kostka" onclick="btnClick()"></button></td>
+                <td><button class="kostka" onclick="hodKostkou()"></button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
                 <td><button class="domecek-zluta"></button></td>
@@ -157,39 +157,16 @@
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-    function kostka(){
+        const socket = io();
 
-        let vysledekKostka = Math.floor(Math.random() * 6) + 1
-        if (vysledekKostka === 1) {
-            console.log('miluju michnu1')
+        function hodKostkou() {
+            const hod = Math.floor(Math.random() * 6) + 1;;
+            socket.emit('hodKostkou', hod); // Pošle výsledek hodu na server
         }
-        if (vysledekKostka === 2) {
-            console.log('miluju michnu2')
-        }
-        if (vysledekKostka === 3) {
-            console.log('miluju michnu3')
-        }
-        if (vysledekKostka === 4) {
-            console.log('miluju michnu4')
-        }
-        if (vysledekKostka === 5) {
-            console.log('miluju michnu5')
-        }
-        if (vysledekKostka === 6) {
-            console.log('miluju michnu')
-        }
-    }
 
-    const socket = io();
-    
-    function btnClick() {
-        
-        socket.emit('btnClick',kostka())
-    }
-
-    socket.on('btnClick', (data) => {
-      console.log(data);
-    });
+        socket.on('hodKostkou', (data) => {
+            console.log("Výsledek hodu: " + data);
+        });
   </script>
 </body>
 </html>
