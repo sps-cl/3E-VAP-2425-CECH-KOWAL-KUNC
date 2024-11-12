@@ -101,7 +101,7 @@ body {
   position: absolute;
   width: 6vw;
   height: 12vh;
-  left: 78vw;
+  right: 15.4vw;
   top: 40.5vh;
   transform-style: preserve-3d;
   transition: 0.5s ease;
@@ -190,7 +190,7 @@ body {
 
 /* From Uiverse.io by BHARGAVPATEL1244 */ 
 #rollButton {
-  left: 77.8vw;
+  right: 15vw;
   top: 30.5vh;
   outline: none;
   cursor: pointer;
