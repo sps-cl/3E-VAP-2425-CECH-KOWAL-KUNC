@@ -83,7 +83,7 @@ const poles = [
 ];
 
 const dice = document.querySelector(".dice");
-const rollBtn = document.querySelector(".roll");
+const rollBtn = document.getElementById("rollButton");
 let rollValue = 0; // Variable to store the dice roll value
 
 // Function to generate a random dice roll and store the result
