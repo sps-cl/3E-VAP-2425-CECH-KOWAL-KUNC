@@ -88,7 +88,7 @@ let rollValue = 0; // Variable to store the dice roll value
 
 // Function to generate a random dice roll and store the result
 const randomDice = () => {
-  rollValue = Math.floor(Math.random() * 6) + 1; // Store the roll value in rollValue
+  rollValue = 6 //Math.floor(Math.random() * 6) + 1; // Store the roll value in rollValue
   rollDice(rollValue); // Trigger dice animation
   console.log(`Player ${currentPlayer} rolled a ${rollValue}`);
 
@@ -152,7 +152,6 @@ let playerPositions = {
 let currentPlayer = 1; // Track which player's turn it is
 
 const moveFigure = (player, roll) => {
-  // Get the current state of the player's piece
   let playerState = playerPositions[player];
   let currentPole = playerState.position;
   let currentIndex = poles.indexOf(currentPole);
@@ -160,24 +159,23 @@ const moveFigure = (player, roll) => {
 
   // Check if the piece is in spawn
   if (playerState.inSpawn) {
-    // Only allow movement out of spawn if the player rolls a 6
     if (roll === 6) {
       // Move the piece out of spawn to the starting position
-      currentPole.style.backgroundColor = ""; // Clear spawn color
-      let startingPole = playerState.startPole; // Starting position on the board
-
-      // Set the color of the starting position and update the player's position
-      startingPole.style.backgroundColor = playerState.color;
+      let startingPole = playerState.startPole;
+      let startingInnerCircle = startingPole.querySelector('.inner-circle');
+      
+      // Clear previous spawn color and set the new position color
+      currentPole.querySelector('.inner-circle').style.backgroundColor = "";
+      startingInnerCircle.style.backgroundColor = playerState.color;
+      startingInnerCircle.style.border = '2px solid black';
       playerState.position = startingPole;
-      playerState.inSpawn = false; // Mark as out of spawn
+      playerState.inSpawn = false;
 
-      console.log(
-        `Player ${player} rolled a 6 and moved out of spawn to position ${startingPole.id}`
-      );
+      console.log(`Player ${player} rolled a 6 and moved out of spawn to position ${startingPole.id}`);
     } else {
       console.log(`Player ${player} is in spawn and needs a 6 to move.`);
     }
-    return; // Exit the function if the piece is in spawn
+    return;
   }
 
   // Calculate the new position index based on the roll
@@ -186,21 +184,21 @@ const moveFigure = (player, roll) => {
   // Check if the new position would pass the starting position
   if (newIndex > startIndex && currentIndex <= startIndex - 6) {
     console.log(`Player ${player} cannot move past their start position.`);
-    return; // Stop the move
+    return;
   }
 
-  // Clear the previous position's color
-  currentPole.style.backgroundColor = "";
+  // Clear the previous position's inner circle color
+  currentPole.querySelector('.inner-circle').style.backgroundColor = "";
+  currentPole.querySelector('.inner-circle').style.border = 'none';
 
-  // Set the color of the new position according to the player's color
+  // Set the color of the new position's inner circle
   let newPole = poles[newIndex];
-  newPole.style.backgroundColor = playerState.color;
-  playerState.position = newPole; // Update the player's position to the new pole
+  let newInnerCircle = newPole.querySelector('.inner-circle');
+  newInnerCircle.style.backgroundColor = playerState.color;
+  newInnerCircle.style.border = '2px solid black';
+  playerState.position = newPole;
 
-  // Log the movement to the console
-  console.log(
-    `Player ${player} moved from position ${currentPole.id} to position ${newPole.id}`
-  );
+  console.log(`Player ${player} moved from position ${currentPole.id} to position ${newPole.id}`);
 };
 
 const calculateNewPosition = (currentPole, roll) => {
@@ -211,6 +209,13 @@ const calculateNewPosition = (currentPole, roll) => {
 
 const togglePlayer = () => {
   currentPlayer = currentPlayer === 1 ? 2 : 1;
+  updateTurnIndicator();
+};
+
+// Function to update the turn indicator
+const updateTurnIndicator = () => {
+  const turnIndicator = document.getElementById("turn-indicator");
+  turnIndicator.textContent = `Player ${currentPlayer}'s turn`;
 };
 
 document.querySelector(".roll").addEventListener("click", rollDice);
