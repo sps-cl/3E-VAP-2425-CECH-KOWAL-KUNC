@@ -13,19 +13,25 @@ app.use(express.static("public"));
 io.on("connection", (socket) => {
   console.log(`User connected: ${socket.id}`);
 
-  socket.on("hodKostkou", (data) => {
-    console.log("Hod:" + data + ", Hráč:"+ socket.id);
-    io.emit("hodKostkou", data);
-  });
+  socket.on('rollDice', (data) => {
+      // Calculate the new position based on roll value and current position
+      const newPosition = calculateNewPosition(data.currentPosition, data.rollValue);
 
-  socket.on("JMENO_CLIENT_TO_SERVER_EVENTU", (data) => {
-    io.emit("JMENO_SERVER_TO_CLIENT_EVENTU", data);
+      // Emit a single updateMove event with both the roll value and new position
+      io.emit('updateMove', { player: data.player, newPosition, rollValue: data.rollValue });
   });
 
   socket.on("disconnect", () => {
-    console.log(`User disconnected: ${socket.id}`);
+      console.log(`User disconnected: ${socket.id}`);
   });
 });
+
+const calculateNewPosition = (currentPosition, rollValue) => {
+  const currentIndex = poles.indexOf(currentPosition);
+  const newIndex = (currentIndex + rollValue) % poles.length;
+  return poles[newIndex];
+};
+
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {

@@ -7,107 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="turn-indicator">Player 1's turn</div>
     <div class="Board" id="cely-pole">
         <table>
             <tr>
-                <td><button class="spawn-red" id="rf1"></button></td>
-                <td><button class="spawn-red" id="rf2"></button></td>
+                <td><button class="spawn-red" id="rf1"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-red" id="rf2"><div class="inner-circle"></div></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="pole" ></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zelena"></button></td>
+                <td><button class="pole" id="3"><div class="inner-circle"></div>3-0</button></td>
+                <td><button class="pole" id="4"><div class="inner-circle"></div>4-1</button></td>
+                <td><button class="nastupni-poleG" id="5"><div class="inner-circle"></div>5-2</button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="spawn-green" id="gf1"></button></td>
-                <td><button class="spawn-green" id="gf2"></button></td>
+                <td><button class="spawn-green" id="gf1"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-green" id="gf2"><div class="inner-circle"></div></button></td>
             </tr>
             <tr>
-                <td><button class="spawn-red" id="rf3"></button></td>
-                <td><button class="spawn-red" id="rf4"></button></td>
+                <td><button class="spawn-red" id="rf3"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-red" id="rf4"><div class="inner-circle"></div></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zelena"></button></td>
-                <td><button class="pole"></button></td>
+                <td><button class="pole" id="10"><div class="inner-circle"></div>10-39</button></td>
+                <td><button class="domecek-zelena"><div class="inner-circle"></div>11</button></td>
+                <td><button class="pole" id="12"><div class="inner-circle"></div>12-3</button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="spawn-green" id="gf3"></button></td>
-                <td><button class="spawn-green" id="gf4"></button></td>
-            </tr>
-            <tr>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zelena"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
+                <td><button class="spawn-green" id="gf3"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-green" id="gf4"><div class="inner-circle"></div></button></td>
             </tr>
             <tr>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zelena"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-            </tr>
-            <tr>
-                <td><button class="domecek-cervena"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zelena"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-            </tr>
-            <tr>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-cervena"></button></td>
-                <td><button class="domecek-cervena"></button></td>
-                <td><button class="domecek-cervena"></button></td>
-                <td><button class="domecek-cervena"></button></td>
-                <td><button class="roll" id="kostkav">Roll</button></td>
-                <td><button class="domecek-zluta"></button></td>
-                <td><button class="domecek-zluta"></button></td>
-                <td><button class="domecek-zluta"></button></td>
-                <td><button class="domecek-zluta"></button></td>
-                <td><button class="pole"></button></td>
-            </tr>
-            <tr>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-modra"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-zluta"></button></td>
-            </tr>
-            <tr>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-modra"></button></td>
-                <td><button class="pole"></button></td>
+                <td><button class="pole" id="15"><div class="inner-circle"></div>15-38</button></td>
+                <td><button class="domecek-zelena"><div class="inner-circle"></div>16</button></td>
+                <td><button class="pole" id="17"><div class="inner-circle"></div>17-4</button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
@@ -118,44 +54,110 @@
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-modra"></button></td>
-                <td><button class="pole"></button></td>
+                <td><button class="pole" id="18"><div class="inner-circle"></div>18-37</button></td>
+                <td><button class="domecek-zelena"><div class="inner-circle"></div>19</button></td>
+                <td><button class="pole" id="20"><div class="inner-circle"></div>20-5</button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
             </tr>
             <tr>
-                <td><button class="spawn-blue"id="bf1"></button></td>
-                <td><button class="spawn-blue"id="bf2"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="domecek-modra"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="non"></button></td>
-                <td><button class="spawn-yellow"id="yf1"></button></td>
-                <td><button class="spawn-yellow"id="yf"></button></td>
+                <td><button class="nastupni-poleR" id="21"><div class="inner-circle"></div>21-32</button></td>
+                <td><button class="pole" id="22"><div class="inner-circle"></div>22-33</button></td>
+                <td><button class="pole" id="23"><div class="inner-circle"></div>23-34</button></td>
+                <td><button class="pole" id="24"><div class="inner-circle"></div>24-35</button></td>
+                <td><button class="pole" id="25"><div class="inner-circle"></div>25-36</button></td>
+                <td><button class="domecek-zelena"><div class="inner-circle"></div>26</button></td>
+                <td><button class="pole" id="27"><div class="inner-circle"></div>27-6</button></td>
+                <td><button class="pole" id="28"><div class="inner-circle"></div>28-7</button></td>
+                <td><button class="pole" id="29"><div class="inner-circle"></div>29-8</button></td>
+                <td><button class="pole" id="30"><div class="inner-circle"></div>30-9</button></td>
+                <td><button class="pole" id="31"><div class="inner-circle"></div>31-10</button></td>
             </tr>
             <tr>
-                <td><button class="spawn-blue"id="bf3"></button></td>
-                <td><button class="spawn-blue"id="bf4"></button></td>
+                <td><button class="pole" id="32"><div class="inner-circle"></div>32-31</button></td>
+                <td><button class="domecek-cervena"><div class="inner-circle"></div>33</button></td>
+                <td><button class="domecek-cervena"><div class="inner-circle"></div>34</button></td>
+                <td><button class="domecek-cervena"><div class="inner-circle"></div>35</button></td>
+                <td><button class="domecek-cervena"><div class="inner-circle"></div>36</button></td>
+                <td><button class="non"></button></td>
+                <td><button class="domecek-zluta"><div class="inner-circle"></div>38</button></td>
+                <td><button class="domecek-zluta"><div class="inner-circle"></div>39</button></td>
+                <td><button class="domecek-zluta"><div class="inner-circle"></div>40</button></td>
+                <td><button class="domecek-zluta"><div class="inner-circle"></div>41</button></td>
+                <td><button class="pole" id="42"><div class="inner-circle"></div>42-11</button></td>
+            </tr>
+            <tr>
+                <td><button class="pole" id="43"><div class="inner-circle"></div>43-30</button></td>
+                <td><button class="pole" id="44"><div class="inner-circle"></div>44-29</button></td>
+                <td><button class="pole" id="45"><div class="inner-circle"></div>45-28</button></td>
+                <td><button class="pole" id="46"><div class="inner-circle"></div>46-27</button></td>
+                <td><button class="pole" id="47"><div class="inner-circle"></div>47-26</button></td>
+                <td><button class="domecek-modra"><div class="inner-circle"></div>48</button></td>
+                <td><button class="pole" id="49"><div class="inner-circle"></div>49-16</button></td>
+                <td><button class="pole" id="50"><div class="inner-circle"></div>50-15</button></td>
+                <td><button class="pole" id="51"><div class="inner-circle"></div>51-14</button></td>
+                <td><button class="pole" id="52"><div class="inner-circle"></div>52-13</button></td>
+                <td><button class="nastupni-poleY" id="53"><div class="inner-circle"></div>53-12</button></td>
+            </tr>
+            <tr>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="domecek-modra"></button></td>
-                <td><button class="pole"></button></td>
-                <td><button class="pole"></button></td>
                 <td><button class="non"></button></td>
                 <td><button class="non"></button></td>
-                <td><button class="spawn-yellow"id="yf3"></button></td>
-                <td><button class="spawn-yellow"id="yf4"></button></td>
+                <td><button class="pole" id="54"><div class="inner-circle"></div>54-25</button></td>
+                <td><button class="domecek-modra"><div class="inner-circle"></div>55</button></td>
+                <td><button class="pole" id="56"><div class="inner-circle"></div>56-17</button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+            </tr>
+            <tr>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="pole" id="57"><div class="inner-circle"></div>57-24</button></td>
+                <td><button class="domecek-modra"><div class="inner-circle"></div>58</button></td>
+                <td><button class="pole" id="59"><div class="inner-circle"></div>59-18</button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+            </tr>
+            <tr>
+                <td><button class="spawn-blue" id="bf1"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-blue" id="bf2"><div class="inner-circle"></div></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="pole" id="62"><div class="inner-circle"></div>62-23</button></td>
+                <td><button class="domecek-modra"><div class="inner-circle"></div>63</button></td>
+                <td><button class="pole" id="64"><div class="inner-circle"></div>64-19</button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="spawn-yellow" id="yf1"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-yellow" id="yf2"><div class="inner-circle"></div></button></td>
+            </tr>
+            <tr>
+                <td><button class="spawn-blue" id="bf3"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-blue" id="bf4"><div class="inner-circle"></div></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="nastupni-poleB" id="69"><div class="inner-circle"></div>69-22</button></td>
+                <td><button class="pole" id="70"><div class="inner-circle"></div>70-21</button></td>
+                <td><button class="pole" id="71"><div class="inner-circle"></div>71-20</button></td>
+                <td><button class="non"></button></td>
+                <td><button class="non"></button></td>
+                <td><button class="spawn-yellow" id="yf3"><div class="inner-circle"></div></button></td>
+                <td><button class="spawn-yellow" id="yf4"><div class="inner-circle"></div></button></td>
             </tr>
         </table>
     </div>
-        <div class="container">
-            <div class="dice">
+    <button id="rollButton"><span>Roll a dice</span></button>
+    <div class="container">
+        <div class="dice">
             <div class="face front"></div>
             <div class="face back"></div>
             <div class="face top"></div>
@@ -164,7 +166,6 @@
             <div class="face left"></div>
         </div>
     </div>
-    
     <script src="/socket.io/socket.io.js"></script>
     <script src="index.js" defer></script>
 </body>
