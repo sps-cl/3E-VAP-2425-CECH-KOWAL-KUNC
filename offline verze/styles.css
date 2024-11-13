@@ -15,8 +15,8 @@ body {
 }
 
 .inner-circle {
-  width: 1.1vw;
-  height: 2.15vh;
+  width: 1.05vw;
+  height: 2.2vh;
   background-color: transparent;  /* Default to transparent */
   border-radius: 50%;          /* Make it a perfect circle */
   position: relative;          /* Position it absolutely within the #rollButton */
@@ -53,29 +53,29 @@ body {
 .spawn-red {
   background-color: red;
   border: 2px solid black;
-  width: 1.1vw;
-  height: 2.15vh;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 .spawn-green {
   background-color: green;
   border: 2px solid black;
-  width: 1.1vw;
-  height: 2.15vh;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 .spawn-blue {
   background-color: blue;
   border: 2px solid black;
-  width: 1.1vw;
-  height: 2.15vh;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 .spawn-yellow {
   background-color: yellow;
   border: 2px solid black;
-  width: 1.1vw;
-  height: 2.15vh;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 
