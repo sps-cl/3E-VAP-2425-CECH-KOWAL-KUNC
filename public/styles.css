@@ -1,105 +1,127 @@
-.Board{
-  margin-left: 32vw;
-  width: 50%;
-  margin-top: 2vw;
-}
-
-.pole {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 2px solid black;
-}
-
 body {
   background-color: rgb(143, 143, 143);
 }
 
+.Board {
+  padding-left: 32vw;
+  padding-top: 15vh;
+}
+
+.nastupni-poleR,
+.nastupni-poleB,
+.nastupni-poleY,
+.nastupni-poleG,
+.pole,
+.domecek-zelena,
+.domecek-cervena,
+.domecek-zluta,
+.domecek-modra {
+  /* velikost kruhu */
+  width: 2.6vw;
+  height: 2.6vw;
+  border-radius: 50px;
+  font-size: 0px;
+}
+
+.inner-circle {
+  width: 1vw;
+  height: 2.2vh;
+  background-color: transparent; /* Default to transparent */
+  border-radius: 50%; /* Make it a perfect circle */
+  position: relative; /* Position it absolutely within the #rollButton */
+  top: 28%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Ensure centering works perfectly */
+  border: 2px solid transparent;
+}
+
+.pole {
+  border: 2px solid black;
+}
 .non {
   display: none;
+}
+
+.nastupni-poleR {
+  background-color: rgb(255, 85, 85);
+  border: 2px solid black;
+}
+.nastupni-poleG {
+  background-color: rgb(1, 207, 1);
+  border: 2px solid black;
+}
+.nastupni-poleB {
+  background-color: rgb(88, 88, 255);
+  border: 2px solid black;
+}
+.nastupni-poleY {
+  background-color: rgb(255, 255, 90);
+  border: 2px solid black;
 }
 
 .spawn-red {
   background-color: red;
   border: 2px solid black;
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-}
-.spawn-blue {
-  background-color: blue;
-  border: 2px solid black;
-  width: 30px;
-  height: 30px;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 .spawn-green {
   background-color: green;
   border: 2px solid black;
-  width: 30px;
-  height: 30px;
+  width: 1.05vw;
+  height: 2.2vh;
+  border-radius: 50px;
+}
+.spawn-blue {
+  background-color: blue;
+  border: 2px solid black;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
 }
 .spawn-yellow {
   background-color: yellow;
   border: 2px solid black;
-  width: 30px;
-  height: 30px;
+  width: 1.05vw;
+  height: 2.2vh;
   border-radius: 50px;
-}
-
-.kostka:hover {
-  background-color: rgb(240, 240, 240);
-}
-
-.domecek-zelena {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: green;
-  border: 2px solid black;
 }
 
 .domecek-cervena {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: red;
+  background-color: rgb(255, 85, 85);
   border: 2px solid black;
 }
-
-.domecek-zluta {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: yellow;
+.domecek-zelena {
+  background-color: rgb(1, 207, 1);
   border: 2px solid black;
 }
-
 .domecek-modra {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: blue;
+  background-color: rgb(88, 88, 255);
+  border: 2px solid black;
+}
+.domecek-zluta {
+  background-color: rgb(255, 255, 90);
   border: 2px solid black;
 }
 
 .dice {
   position: absolute;
-  width: 5vw;
-  height: 5vw;
-  left: 70vw; 
-  top: 15vw;
+  width: 6vw;
+  height: 12vh;
+  right: 15.4vw;
+  top: 40.5vh;
   transform-style: preserve-3d;
-  transition: 1s ease;
+  transition: 0.5s ease;
 }
-
 @keyframes rolling {
   50% {
     transform: rotateX(455deg) rotateY(455deg);
   }
 }
-
+.kostka:hover {
+  background-color: rgb(240, 240, 240);
+}
 .face {
   position: absolute;
   width: 100%;
@@ -109,7 +131,6 @@ body {
   transform-style: preserve-3d;
   background: linear-gradient(145deg, #dddbd8, #fff);
 }
-
 .face::before {
   position: absolute;
   content: "";
@@ -119,7 +140,6 @@ body {
   background: #f6f3f0;
   transform: translateZ(-1px);
 }
-
 .face::after {
   position: absolute;
   content: "";
@@ -130,79 +150,108 @@ body {
   border-radius: 50%;
   background: #131210;
 }
-
 .front {
   transform: translateZ(50px);
 }
-
 .back {
   transform: rotateX(180deg) translateZ(50px);
 }
-
 .top {
   transform: rotateX(90deg) translateZ(50px);
 }
-
 .bottom {
   transform: rotateX(-90deg) translateZ(50px);
 }
-
 .right {
   transform: rotateY(90deg) translateZ(50px);
 }
-
 .left {
   transform: rotateY(-90deg) translateZ(50px);
 }
-
 .front::after {
   width: 30px;
   height: 30px;
   background: #f63330;
   margin: -15px 0 0 -15px;
 }
-
 .back::after {
   margin: -35px 0 0 -30px;
   box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
 }
-
 .top::after {
   margin: -30px 0 0 -30px;
   box-shadow: 40px 40px;
 }
-
 .bottom::after {
   margin: -36px 0 0 -36px;
   box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
 }
-
 .right::after {
   margin: -30px 0 0 -30px;
   box-shadow: 40px 0, 0 40px, 40px 40px;
 }
-
 .left::after {
   margin: -35px 0 0 -35px;
   box-shadow: 25px 25px, 50px 50px;
 }
 
-/*
-  Roll Button styles
-*/
-
-.roll {
+/* From Uiverse.io by BHARGAVPATEL1244 */
+#rollButton {
+  right: 15vw;
+  top: 30.5vh;
+  outline: none;
   cursor: pointer;
-  color: #b33951;
-  font: 700 14px "Montserrat";
-  transition: 0.4s;
-  background-color: pink;
-  border: 2px solid black;
-  width: 50px;
-  height: 50px;
+  border: none;
+  padding: 1.2vh 1.1vw;
+  margin: 0;
+  position: absolute;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: rgb(57, 215, 255);
+  color: ghostwhite;
 }
 
-.roll:hover {
-  color: #fff;
-  background: #b33951;
+#rollButton span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+#rollButton:hover span {
+  color: black;
+}
+
+#rollButton::before,
+#rollButton::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#rollButton::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+#rollButton:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+#turn-indicator {
+  position: absolute;
+  font-size: 2vw;
+  font-weight: bold;
+  color: #333;
+  left: 41.5vw;
+  top: 2vh;
 }
